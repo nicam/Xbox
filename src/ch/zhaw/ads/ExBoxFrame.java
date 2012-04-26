@@ -132,7 +132,8 @@ public class ExBoxFrame extends JFrame implements ActionListener, ItemListener {
 			try {
 				this.interpret(arguments.getText());
 			} catch (Exception e1) {
-				this.error(e1.getMessage());
+				e1.printStackTrace();
+//				System.out.print(e1.());
 			}
 		} else if (e.getSource() == open) {
 			this.open();

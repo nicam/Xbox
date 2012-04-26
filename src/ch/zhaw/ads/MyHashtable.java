@@ -34,7 +34,7 @@ public class MyHashtable<K,V> implements java.util.Map<K,V> {
 	//  Returns true if this map maps one or more keys to the specified value. 
 	public boolean containsValue(Object value)  {
 		for (V v : values) {
-			if (v == value) {
+			if (v.equals(value)) {
 				return true;
 			}
 		}
