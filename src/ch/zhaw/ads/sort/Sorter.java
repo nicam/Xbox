@@ -1,10 +1,24 @@
 package ch.zhaw.ads.sort;
 
-abstract public class Sorter {
+abstract public class Sorter implements Runnable {
 	private String name;
+	protected int[] values;
+	private String output;
 	
 	Sorter(String name) {
 		this.name = name;
+	}
+	
+	void setValues(int[] values) {
+		this.values = values;
+	}
+	
+	public String getTime() {
+		return this.output;
+	}
+
+	public void run() {
+		output = this.test(values);
 	}
 	
 	String test(int[] values) {
@@ -18,7 +32,7 @@ abstract public class Sorter {
 			count++;
 			end = System.currentTimeMillis();
 		} while (end - start < 1000);
-		return (double)(end-start)/count + ";";	
+		return (long)(end-start)/count + ";";	
 	}
 
 	abstract int[] sort(int[] values);

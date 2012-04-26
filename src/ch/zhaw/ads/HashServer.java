@@ -31,7 +31,6 @@ public class HashServer implements CommandInterpreter {
 			System.out.println("Total load time " + (System.currentTimeMillis() - startTime) + "ms");
 			return "\nLoaded";
 		}
-		
 	}
 
 }
